@@ -3,9 +3,10 @@ package logger
 import (
 	"fmt"
 
-	"github.com/cihub/seelog"
 	"os"
 	"strings"
+
+	"github.com/cihub/seelog"
 )
 
 // init 初始化包
@@ -75,7 +76,24 @@ var (
 
 	// Critical 写一条日志信息。级别等于 Critical
 	Critical = seelog.Critical
+	//FlushChannel 如果传1 那么继续goroutine,否则推出
+	FlushChannel  = make(chan int)
+	ReturnChannel = make(chan int)
 )
+
+func ThreadFlush() {
+	for {
+		channelNote := <-FlushChannel
+		Flush()
+
+		if channelNote == 1 {
+			continue
+		} else {
+			ReturnChannel <- 1
+			break
+		}
+	}
+}
 
 // Flush 将所有日志信息写入缓存
 func Flush() {

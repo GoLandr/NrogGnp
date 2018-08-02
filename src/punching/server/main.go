@@ -19,7 +19,7 @@ func Main() {
 		logger.Errorf("加载配置信息出错，原因为:%s\n", err)
 		return
 	}
-
+	logger.Errorf("加载配置信息没有出错")
 	// Proxy Server Address
 	proxyAddr := Config.Proxy
 	if proxyAddr == "" {

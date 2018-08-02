@@ -1,5 +1,5 @@
-.PHONY : default server client proxy all_windows all_darwin windows arm darwin deps fmt  clean all
-export GOPATH:=$(shell pwd)
+.PHONY : default server client proxy all_windows all_darwin windows arm darwin deps fmt  clean all all_linux
+export GOPATH:= $(shell pwd)
 
 PREFIX=''
 default: all
@@ -13,7 +13,7 @@ fmt:
 
 deps:
 	go get  -d -v punching/...
-
+	
 server: deps
 	go install punching/main/server
 

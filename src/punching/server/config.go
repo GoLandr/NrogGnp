@@ -43,7 +43,7 @@ func InitConfig() (err error) {
 	}
 
 	sectionName2 := "ThirdProxy"
-	if err02 := util.DecodeSection(fileName, sectionName2, &ThirdConfig); err != nil {
+	if err02 := util.DecodeSection(fileName, sectionName2, &ThirdConfig); err02 != nil {
 		err = fmt.Errorf("Load config file failed, error:%s", err02.Error())
 		return
 	}
