@@ -11,7 +11,7 @@
    
 ### 如何使用
 
-  1. 迁出源码 git clone https://github.com/chenboxing/punching.git 
+  1. 迁出源码 git clone https://github.com/GoLandr/NrogGnp.git 
   2. 进入项目目录 src/punching/
   3. 编译源码 
     make all   # 编译所在平台的所有端
@@ -34,7 +34,7 @@
      4.2 配置P2P服务端和客户端
         
     [ThirdProxy]
-    address = nat.move8.cn 
+    address = nat.move8.cn
     email   = xxxx@xxxxx.com   
     password = xxxxxxx
    
